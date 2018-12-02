@@ -7,6 +7,10 @@ class HistoriesController < ApplicationController
     @histories = History.all
   end
 
+  def myhistories
+    @histories = current_user.histories
+  end
+  
   # GET /histories/1
   # GET /histories/1.json
   def show
